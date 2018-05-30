@@ -1,10 +1,11 @@
 const baseURL = 'http://localhost:3000/entries';
 
 export function addEntry(entry){
+    console.log(entry)
     return fetch(baseURL + '/new' , {
         method:'post',
         headers:{
-            "Content-Type":"form-data"
+            "Content-Type":"application/json"
         },
         body:JSON.stringify(entry)
     })

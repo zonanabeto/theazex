@@ -79,8 +79,7 @@ class NewEntry extends Component{
                     <br/><br/>
                     <input type="text" name="description" placeholder="Description or Subtitle" onChange={this.handleChange} />
                     <br/><br/>
-                    <input type="text" name="author" placeholder="Autor" onChange={this.handleChange}/>
-                    <br/><br/>
+
                     <textarea name="body" placeholder="Body"  cols="30" rows="10" onChange={this.handleChange}></textarea>
                     <br/><br/>
                     <input type="file" name="cover" />
