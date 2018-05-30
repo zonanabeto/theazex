@@ -18,3 +18,15 @@ export function getEntries(){
     .then(r=>r.json())
     .then(entries=>entries);
 }
+
+export function getSingleItem(id) {
+    return fetch(baseURL + '/entry/' +id)
+        .then(res => {
+            if (!res.ok) return Promise.reject(res.statusText);
+            return res.json()
+        })
+        .then(item => {
+            return item;
+        })
+
+}

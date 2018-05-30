@@ -1,10 +1,17 @@
 import React ,{Component} from 'react';
+import PlacesPosts from './PlacesPosts';
+import MapContainer from './MapContainer';
+
 
 class PlacesContainer extends Component{
+
+
+
     render(){
         return(
-            <div>
-                <h1>Hola</h1>
+            <div style={{display:"flex", flexDirection:"column", justifyItems:"center"}} >
+                <MapContainer/>
+                <PlacesPosts/>
             </div>
         )
     }

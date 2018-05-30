@@ -28,6 +28,8 @@ class HomePageInfo1Container extends Component{
             this.setState({quotes})
         })
         .catch(e=>console.log(e));
+
+        
     }
 
 

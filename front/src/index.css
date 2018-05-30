@@ -16,3 +16,12 @@ body {
 .ant-carousel .slick-slide h3 {
   color: #fff;
 }
+.ant-card-bordered:hover{
+  border: 1px solid rgba(8, 103, 136, 1);;
+}
+
+
+.fixedNav{
+  position:fixed;
+  z-index: 9999;
+}

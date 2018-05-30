@@ -1,8 +1,6 @@
 import React from 'react';
 import { Carousel } from 'antd';
-import background1 from '../../images/20171203_065949.jpg';
-import background2 from '../../images/20171230_171624.jpg';
-import background3 from '../../images/IMG_0513.JPG';
+
 
 
 

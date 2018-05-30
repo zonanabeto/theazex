@@ -20,3 +20,4 @@ export function getQuotes(){
     .then(r=>r.json())
     .then(posts=>posts);
 }
+

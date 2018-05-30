@@ -14,10 +14,20 @@ class NavBar extends Component {
         current: 'logo',
         catalog:" A-Z Experiences",
         books:" Books",
-        logout:false
+        logout:false,
+        user:{}
     }
 
-    componentWillMount
+
+
+    componentWillMount(){
+            //if(!localStorage.getItem("user")) return this.props.history.push('/');
+            if(localStorage.getItem("user")){
+              let user = localStorage.getItem("user");
+              this.setState({user})
+              return;
+    }
+    }
 
         //funciones de botones
             handleClick = (e) => {
@@ -73,8 +83,10 @@ class NavBar extends Component {
   
   
     render() {
+
+        const {user} = this.state;
         return (
-            <div style={{position:"fixed", zIndex:'9999'}}>
+            <div   style={ Object.keys(user).length > 0 ?  {display:"none"} : {display:"block"} } className='fixedNav'>
         
                     <Menu
                         onClick={this.handleClick}
@@ -87,13 +99,13 @@ class NavBar extends Component {
                         <Link to='/'><img onClick={this.logoFunction} style={{width:"100px"}} src={logo} alt="azlogo.png"/></Link>
                         </Menu.Item>
                     
-                        <Menu.Item link onClick={this.aboutMeFunction} key="Aboutme">
+                        <Menu.Item  onClick={this.aboutMeFunction} key="Aboutme">
                            <Link to='/about'> <Icon name="user" />About Me </Link>
                         </Menu.Item>
 
                         <SubMenu title={<span><Icon name="angle-down"/>{this.state.catalog}</span>}>
                             <MenuItemGroup  title="A-Z EXPERIENCES"> 
-                                <Menu.Item onClick={this.catalogClick} key="Top Posts">Top Posts</Menu.Item>
+                               <Menu.Item onClick={this.catalogClick} key="Top Posts"><Link to='/draft'> Top Posts</Link></Menu.Item>
                                 <Menu.Item onClick={this.catalogClick} key="New Posts">New Posts</Menu.Item>
                                 <Menu.Item onClick={this.catalogClick} key="Monthly Best">Monthly Best</Menu.Item>
                             </MenuItemGroup>
@@ -115,9 +127,9 @@ class NavBar extends Component {
                             <Link to='/contact' > <Icon name="envelope" /> Contact Me</Link>
                         </Menu.Item>
 
-                        <Menu.Item  key="logOut">
-                            <Icon name="power-off" />Log Out
-                        </Menu.Item>
+                        {/* // <Menu.Item  key="logOut">
+                        //     <Icon name="power-off" />Log Out
+                        // </Menu.Item> */}
                     
                     </Menu>
         </div>

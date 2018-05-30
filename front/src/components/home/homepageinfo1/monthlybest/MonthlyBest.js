@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
 import {MonthlyBestEntry} from './MonthlyBestEntry'
-import {getEntries} from '../../../../services/entryServices'
+import {getEntries} from '../../../../services/entryServices';
+
 
 
 const sectionStyle = {
@@ -36,7 +37,7 @@ class MonthlyBest extends Component{
                 <div style={{display:"flex",flexDirection:"row", flexWrap:"wrap", justifyContent:"space-around"}} >
                     {this.state.entries.map(entry=>{
                         return (
-                        <MonthlyBestEntry {...entry} key={entry._id}/>
+                                <MonthlyBestEntry {...entry} key={entry._id}/>
                         )
                     })}
                 </div>
